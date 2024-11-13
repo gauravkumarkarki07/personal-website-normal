@@ -7,12 +7,12 @@ export class Header{
                 href:'/'
             },
             {
-                label:'AboutMe',
-                href:'/aboutme'
+                label:'About',
+                href:'/about'
             },
             {
-                label:'Projects',
-                href:'/projects'
+                label:'Work',
+                href:'/work'
             },
             {
                 label:'Contact',

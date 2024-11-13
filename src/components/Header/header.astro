@@ -1,0 +1,32 @@
+---
+import { Header as HeaderClass } from "../../Classes/Header";
+import NormalScreenNavItems from "./NormalScreenNavItems.astro";
+import MobileScreenNavItems from "./MobileScreenNavItems.astro";
+
+const headerObject = new HeaderClass();
+
+const siteName = headerObject.getSiteName();
+const navItems = headerObject.getNavItems();
+---
+
+<header class="max-w-[1280px] mx-auto py-4">
+  <nav
+    class="flex flex-row justify-between items-center md:px-0 md:mt-12 text-sm font-semibold"
+  >
+    <section>
+      <span class="text-2xl hidden md:block">{siteName}</span>
+    </section>
+    <NormalScreenNavItems navItems={navItems} />
+    <MobileScreenNavItems navItems={navItems} />
+  </nav>
+</header>
+
+<script>
+  function openMenu() {
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    hamburger?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
+    });
+  }
+</script>

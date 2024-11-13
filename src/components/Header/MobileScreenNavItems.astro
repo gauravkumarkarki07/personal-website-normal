@@ -1,0 +1,73 @@
+---
+type navItems = {
+  label: string;
+  href: string;
+};
+type Props = {
+  navItems: navItems[];
+};
+const { navItems } = Astro.props;
+---
+
+<ul
+  class="flex flex-col fixed top-0 text-xl bg-white md:hidden gap-6 text-center w-full z-200 h-screen justify-center"
+  id="navItems"
+>
+  {
+    navItems.length > 0 &&
+      navItems.map((items) => (
+        <li class="group transition-all duration-100 ease-in-out">
+          <a
+            href={items.href}
+            class="active:text-red-500 bg-left-bottom bg-gradient-to-r cursor-pointer from-textTeal to-textTeal bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] py-1 transition-all duration-200 ease-out"
+          >
+            {items.label}
+          </a>
+        </li>
+      ))
+  }
+</ul>
+
+<span
+  class="absolute md:hidden top-2 right-4 text-2xl cursor-pointer hover:text-textTeal"
+  id="exitNav"
+>
+  X
+</span>
+
+<span
+  class="absolute md:hidden top-4 right-2 w-[20px] h-[20px] cursor-pointer hover:text-textTeal"
+>
+  <img
+    src="/hamburger.png"
+    class="w-full h-full object-contain"
+    id="hamburger"
+  />
+</span>
+
+<script>
+  window.onload = function () {
+    const navItems = document.getElementById("navItems") as HTMLElement;
+    const exitNav = document.getElementById("exitNav") as HTMLElement;
+    const hamburger = document.getElementById("hamburger") as HTMLElement;
+
+    // Initial state: menu hidden, hamburger visible
+    navItems.style.display = "none";
+    hamburger.style.display = "block";
+    exitNav.style.display = "none";
+
+    // Show the menu and hide the hamburger icon when clicking hamburger
+    hamburger.addEventListener("click", () => {
+      navItems.style.display = "flex";
+      hamburger.style.display = "none";
+      exitNav.style.display = "block";
+    });
+
+    // Hide the menu and show the hamburger icon when clicking exit (X)
+    exitNav.addEventListener("click", () => {
+      navItems.style.display = "none";
+      hamburger.style.display = "block";
+      exitNav.style.display="none";
+    });
+  };
+</script>

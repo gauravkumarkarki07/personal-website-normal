@@ -8,7 +8,8 @@ export default {
 			},
 			colors:{
 				textBlack:"#353935",
-				textTeal:"#009999",
+				textTeal:"#008000",
+				background:'#EEEEEE'
 			}
 		},
 	},

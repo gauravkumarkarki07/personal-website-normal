@@ -1,19 +1,19 @@
+---
+import SkillsCarousel from "./SkillsMarquee.astro";
+---
+
 <article
-  class="flex flex-col gap-8 md:gap-6 self-center text-center text-textBlack min-h-[95vh] justify-center w-fit px-10"
+  class="h-screen flex flex-col justify-center gap-20 md:gap-12 items-center text-center"
 >
-  <h2 class="text-lg text-gray-500">
+<section class="flex flex-col gap-8 md:gap-4 items-center">
+  <h2 class="text-lg text-gray-500 w-full">
     Hi, I am <span class="text-textTeal font-bold">Gaurav Kumar Karki</span>
   </h2>
   <h1 class="text-5xl md:text-8xl font-semibold">A Software Engineer</h1>
-  <section class="text-center text-lg py-4 w-full flex flex-col gap-6">
-    <span class="flex flex-col gap-2">
-      <span
-        >I build <strong class="text-textTeal">digital solutions</strong>
-        that simply, improve or help create your own digital products.
-      </span>
-    </span>
-  </section>
-  <a class="text-lg px-2 py-2 cursor-pointer bg-textBlack text-white hover:bg-textTeal/10  w-full md:max-w-[200px] self-center font-semibold">
-    Contact Me
-  </a>
+</section>
+  <p class="text-lg">
+    I build <strong class="text-textTeal">digital solutions</strong>
+    that simplify, improve or even help create your own digital products.
+  </p>
+  <SkillsCarousel />
 </article>

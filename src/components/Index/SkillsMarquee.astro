@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import { Skills } from "../../Classes/Skills";
+
+const skillsObject = new Skills();
+const technicalSkills = skillsObject.getTechnicalSkils();
+---
+
+<div class="marquee-container">
+  <ul class="marquee-content">
+    {
+      technicalSkills.length > 0 &&
+        technicalSkills.map((skill) => (
+          <li class="px-3 py-1 bg-transparent text-textBlack text-base whitespace-nowrap flex flex-row items-center gap-1">
+            <Image
+              src={
+                skill.image ||
+                "https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_640.png"
+              }
+              alt={"img"}
+              width={25}
+              height={10}
+              class={"overflow-clip object-contain"}
+              loading={"eager"}
+            />
+            <a>{skill.name}</a>
+          </li>
+        ))
+    }
+    {
+      technicalSkills.length > 0 &&
+        technicalSkills.map((skill) => (
+          <li class="px-3 py-1 bg-transparent text-textBlack text-base whitespace-nowrap flex flex-row items-center gap-1">
+            <Image
+              src={
+                skill.image ||
+                "https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_640.png"
+              }
+              alt={"img"}
+              width={25}
+              height={10}
+              class={"overflow-clip object-contain"}
+              loading={"eager"}
+            />
+            <a>{skill.name}</a>
+          </li>
+        ))
+    }
+  </ul>
+</div>
+
+<style>
+  .marquee-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    white-space: nowrap;
+    background-color: rgba(103, 255, 214, 0.059);  
+    backdrop-filter: blur(5px);
+    z-index: -1;
+  }
+
+  .marquee-content {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+    animation: marquee 15s linear infinite;
+  }
+
+  .marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+    cursor: default;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>

@@ -11,7 +11,7 @@ const navItems = headerObject.getNavItems();
 
 <header class="max-w-[1280px] mx-auto py-4">
   <nav
-    class="flex flex-row justify-between items-center md:px-0 md:mt-12 text-sm font-semibold"
+    class="flex flex-row justify-between items-center md:px-0 md:mt-8 text-sm font-semibold"
   >
     <section>
       <span class="text-2xl hidden md:block">{siteName}</span>
@@ -22,11 +22,11 @@ const navItems = headerObject.getNavItems();
 </header>
 
 <script>
-  function openMenu() {
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobileMenu");
-    hamburger?.addEventListener("click", () => {
-      mobileMenu?.classList.toggle("hidden");
-    });
-  }
+  const mobileNav = document.getElementById("mobileNav") as HTMLElement;
+
+  const hamburger = document.getElementById("hamburger") as HTMLElement;
+
+  hamburger.addEventListener("click", () => {
+    mobileNav.classList.remove("class", "hidden");
+  });
 </script>

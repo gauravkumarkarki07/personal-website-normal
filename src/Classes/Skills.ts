@@ -1,0 +1,80 @@
+type technicalSkills={
+    name:string;
+    image:string;
+}
+
+export class Skills{
+    constructor(){
+        this.technicalSkills=[
+            {
+                name:'JavaScript',
+                image:'https://icon.icepanel.io/Technology/svg/JavaScript.svg'
+            },
+            {
+                name:'TypeScript',
+                image:'https://icon.icepanel.io/Technology/svg/TypeScript.svg'
+            },
+            {
+                name:'ReactJs',
+                image:'https://icon.icepanel.io/Technology/svg/React.svg'
+            },
+            {
+                name:'NodeJs',
+                image:'https://cdn-icons-png.flaticon.com/128/15484/15484303.png'
+            },
+            {
+                name:'ExpressJs',
+                image:'https://icon.icepanel.io/Technology/png-shadow-512/Express.png'
+            },
+            {
+                name:'NestJs',
+                image:'https://icon.icepanel.io/Technology/svg/Nest.js.svg'
+            },
+            {
+                name:'AstroJs',
+                image:'https://icon.icepanel.io/Technology/png-shadow-512/Astro.png'
+            },
+            {
+                name:'Asp.Net',
+                image:'https://icon.icepanel.io/Technology/svg/.NET.svg'
+            },
+            {
+                name:'C#',
+                image:'https://icon.icepanel.io/Technology/svg/C%23-%28CSharp%29.svg'
+            },
+            {
+                name:'MySQL',
+                image:'https://icon.icepanel.io/Technology/svg/MySQL.svg'
+            },
+            {
+                name:'PostgreSQL',
+                image:'https://icon.icepanel.io/Technology/svg/PostgresSQL.svg'
+            },
+            {
+                name:'MongoDB',
+                image:'https://icon.icepanel.io/Technology/svg/MongoDB.svg'
+            },
+            {
+                name:'Docker',
+                image:'https://icon.icepanel.io/Technology/svg/Docker.svg'
+            },
+            {
+                name:'GCP',
+                image:'https://icon.icepanel.io/Technology/svg/Google-Cloud.svg'
+            },
+            {
+                name:'AWS',
+                image:'https://icon.icepanel.io/Technology/png-shadow-512/AWS.png'
+            },
+            {
+                name:'DO',
+                image:'https://icon.icepanel.io/Technology/svg/Digital-Ocean.svg'
+            }
+        ]
+    }
+    private technicalSkills:technicalSkills[];
+
+    getTechnicalSkils(){
+        return this.technicalSkills;
+    }
+}

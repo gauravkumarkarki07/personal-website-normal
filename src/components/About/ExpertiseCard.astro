@@ -1,0 +1,21 @@
+---
+type AboutDetails = {
+  title: string;
+  description: string;
+};
+import type { string } from "astro:schema";
+import { About } from "../../Classes/About";
+const aboutObject = new About();
+const aboutDetails: AboutDetails[] = aboutObject.getExpertiseCardDetails();
+---
+
+<section class="flex flex-col md:flex-row justify-between flex-wrap py-4 gap-8">
+  {
+    aboutDetails.map((details) => (
+      <section class="flex flex-col gap-2 px-3 py-3 text-base w-full md:w-[360px] border-2 rounded-md">
+        <h1 class="text-textTeal">{details.title}</h1>
+        <p class="text-gray-500">{details.description}</p>
+      </section>
+    ))
+  }
+</section>

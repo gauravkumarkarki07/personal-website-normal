@@ -6,7 +6,8 @@ const skillsObject = new Skills();
 const technicalSkills = skillsObject.getTechnicalSkils();
 ---
 
-<div class="marquee-container">
+<div class="marquee-container mt-10">
+  <h1 class="text-base mb-6 text-gray-500">Tools I have worked with</h1>
   <ul class="marquee-content">
     {
       technicalSkills.length > 0 &&
@@ -55,7 +56,6 @@ const technicalSkills = skillsObject.getTechnicalSkils();
     width: 100%;
     position: relative;
     white-space: nowrap;
-    background-color: rgba(103, 255, 214, 0.059);  
     backdrop-filter: blur(5px);
     z-index: -1;
   }

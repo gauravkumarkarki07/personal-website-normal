@@ -1,0 +1,26 @@
+---
+import { Work } from "../../Classes/Work";
+
+const workObject = new Work();
+
+const workDetails = workObject.getWorkDetails();
+---
+
+<section id="work" class="h-[100vh]">
+  <section class="flex flex-col gap-4">
+    <h1>Some of my works that are in production</h1>
+    <section class="text-base flex flex-col md:flex-row justify-between flex-wrap gap-4">
+      {
+        workDetails.map((details) => (
+          <section class="flex flex-col gap-2 border-2 px-3 w-[350px] py-3">
+            <h2 class="text-lg text-textTeal">{details.title}</h2>
+            <p>{details.description}</p>
+            <span class="text-xs">
+              {details.githubLink ? details.githubLink : "not available"}
+            </span>
+          </section>
+        ))
+      }
+    </section>
+  </section>
+</section>

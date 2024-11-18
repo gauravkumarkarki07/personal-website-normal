@@ -8,11 +8,11 @@ export class Header{
             },
             {
                 label:'About',
-                href:'/about'
+                href:'#aboutme'
             },
             {
                 label:'Work',
-                href:'/work'
+                href:'#work'
             },
             {
                 label:'Contact',
